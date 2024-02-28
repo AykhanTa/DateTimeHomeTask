@@ -6,9 +6,14 @@
         {
             //ReverseArray(1,2,3,4,5);
 
-            string date=Console.ReadLine();
-            AgeOfUser(date);
-            
+            //string date=Console.ReadLine();
+            //AgeOfUser(date);         
+
+            Console.WriteLine("Enter the year: ");
+            int year = int.Parse(Console.ReadLine());
+            IsLeapYear(year);
+
+
         }
 
         static void ReverseArray(params int[] arr)
@@ -42,6 +47,19 @@
                 Console.WriteLine("Enter correct format date.");
             }       
               
+        }
+
+        static void IsLeapYear(int year)
+        {
+            bool isLeap=DateTime.IsLeapYear(year);
+            if (isLeap)
+            {
+                Console.WriteLine($"{year} is leap year.");
+            }
+            else
+            {
+                Console.WriteLine($"{year} is not leap year.");
+            }
         }
     }
 }
