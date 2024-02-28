@@ -4,7 +4,11 @@
     {
         static void Main(string[] args)
         {
-            ReverseArray(1,2,3,4,5);
+            //ReverseArray(1,2,3,4,5);
+
+            string date=Console.ReadLine();
+            AgeOfUser(date);
+            
         }
 
         static void ReverseArray(params int[] arr)
@@ -20,6 +24,24 @@
             {
                 Console.Write(item+" ");
             }
+        }
+
+        static void AgeOfUser(string date)
+        {
+            DateTime dateBirth;
+            bool result=DateTime.TryParse(date,out dateBirth);
+            if (result)
+            {
+                dateBirth.ToString("MM/dd/yyyy");
+                DateTime currentDate = DateTime.Now;
+                int age = currentDate.Year - dateBirth.Year;
+                Console.WriteLine(age);
+            }
+            else
+            {
+                Console.WriteLine("Enter correct format date.");
+            }       
+              
         }
     }
 }
