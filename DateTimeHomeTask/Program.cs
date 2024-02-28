@@ -11,7 +11,8 @@
 
             Console.WriteLine("Enter the year: ");
             int year = int.Parse(Console.ReadLine());
-            IsLeapYear(year);
+            //IsLeapYear(year);
+            isLeapYear2(year);
 
 
         }
@@ -53,6 +54,18 @@
         {
             bool isLeap=DateTime.IsLeapYear(year);
             if (isLeap)
+            {
+                Console.WriteLine($"{year} is leap year.");
+            }
+            else
+            {
+                Console.WriteLine($"{year} is not leap year.");
+            }
+        }
+
+        static void isLeapYear2(int year)
+        {
+            if ((year%4==0 && year%100!=0) || year%400==0)
             {
                 Console.WriteLine($"{year} is leap year.");
             }
